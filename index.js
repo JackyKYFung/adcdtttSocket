@@ -200,8 +200,40 @@ io.on("connection", function(socket){
             io.emit("selected", responseObj);
         }
         
-        if(counter == 9){
-            boxes = {
+//        if(counter == 9){
+//            boxes = {
+//                box1:null,
+//                box2:null,
+//                box3:null,
+//                box4:null,
+//                box5:null,
+//                box6:null,
+//                box7:null,
+//                box8:null,
+//                box9:null,
+//                id1:null,
+//                id2:null,
+//                id3:null,
+//                id4:null,
+//                id5:null,
+//                id6:null,
+//                id7:null,
+//                id8:null,
+//                id9:null,
+//                turn: 1
+//            };
+//            
+//            counter = 0;
+//            playerTurn = 1;
+//            
+//            io.emit("tieGame", boxes);
+//        }
+        
+    });
+    
+    
+   socket.on("clearGame", function(){
+       boxes = {
                 box1:null,
                 box2:null,
                 box3:null,
@@ -223,14 +255,13 @@ io.on("connection", function(socket){
                 turn: 1
             };
             
+            players = [];
+            playerSockets = [];
             counter = 0;
             playerTurn = 1;
-            
-            io.emit("tieGame", boxes);
-        }
-        
-    })
-
+   });
+    
+    
    socket.on("disconnect", function(){
        console.log("user has disconnected");
        var index = playerSockets.indexOf(socket.id);
@@ -240,32 +271,32 @@ io.on("connection", function(socket){
        
        var winner = players[0];
        
-       players = [];
-       playerSockets = [];
-        boxes = {
-            box1:null,
-            box2:null,
-            box3:null,
-            box4:null,
-            box5:null,
-            box6:null,
-            box7:null,
-            box8:null,
-            box9:null,
-            id1:null,
-            id2:null,
-            id3:null,
-            id4:null,
-            id5:null,
-            id6:null,
-            id7:null,
-            id8:null,
-            id9:null
-        };
-
-       playerTurn = 1;
-
-       counter = 0;
+//       players = [];
+//       playerSockets = [];
+//        boxes = {
+//            box1:null,
+//            box2:null,
+//            box3:null,
+//            box4:null,
+//            box5:null,
+//            box6:null,
+//            box7:null,
+//            box8:null,
+//            box9:null,
+//            id1:null,
+//            id2:null,
+//            id3:null,
+//            id4:null,
+//            id5:null,
+//            id6:null,
+//            id7:null,
+//            id8:null,
+//            id9:null
+//        };
+//
+//       playerTurn = 1;
+//
+//       counter = 0;
 
        
        

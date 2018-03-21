@@ -240,6 +240,36 @@ io.on("connection", function(socket){
        
        var winner = players[0];
        
+       players = [];
+       playerSockets = [];
+        boxes = {
+            box1:null,
+            box2:null,
+            box3:null,
+            box4:null,
+            box5:null,
+            box6:null,
+            box7:null,
+            box8:null,
+            box9:null,
+            id1:null,
+            id2:null,
+            id3:null,
+            id4:null,
+            id5:null,
+            id6:null,
+            id7:null,
+            id8:null,
+            id9:null
+        };
+
+       playerTurn = 1;
+
+       counter = 0;
+
+       
+       
+       
        io.emit("playerLeft", winner);
    })    
 });
